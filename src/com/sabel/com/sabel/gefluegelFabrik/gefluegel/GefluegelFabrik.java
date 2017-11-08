@@ -1,8 +1,18 @@
-package com.sabel;
+package com.sabel.com.sabel.gefluegelFabrik.gefluegel;
+
+import com.sabel.Gefluegel;
 
 import java.io.InvalidClassException;
 
 public class GefluegelFabrik {
+
+    // Singleton (Darf nur ein Objekt erstelt werden) = Klassenvariable
+    private static GefluegelFabrik instance = new GefluegelFabrik();
+
+    // Klassenmethode
+    public static GefluegelFabrik createInstance() {
+        return GefluegelFabrik.instance;
+    } // END STATIC
 
     public Gefluegel erzeugeGefluegel(String GefluegelTyp) throws InvalidClassException {
         Gefluegel gefluegel = null;
